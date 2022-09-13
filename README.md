@@ -3,8 +3,19 @@
 <p>Este sistema tem como propósitos gerencias credências te todas as redes ou ferramentos dos clientes, salvar cadastro de clientes e facilitar o dia a dia de quem tem mais de 5 clientes e necessita de mais de 1 conta seja no instagram, linkedin, RD station ou linktree.</p>
 
 <p>Este sistema ainda não tem um nome definido, então deixei algumas opções aqui para que no final do projeto, tenhamos algumas boas idéias:</p>
-<ol>
+<ul>
     <li>Save lines</li>
     <li>Drop here</li>
     <li>CMS</li>
-</ol>
+</ul>
+
+<h3>Telas</h3>
+
+<p>Vamos ter algumas telas principais, estas serão as telas de view do nosso projeto onde o cliente irá cadastrar informações ou usuários, elas serão:</p>
+
+<ul>
+    <li>Login</li>
+    <li>Cadastro Usuário</li>
+    <li>Cadastro Cliente</li>
+    <li>Painel</li>
+</ul>
