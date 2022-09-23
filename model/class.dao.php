@@ -8,25 +8,16 @@ class Dao{
 
   public function conexao()
   {
-    //cria um objeto da classe Mysqli e efetua conexao com BD;
     $this->mysql = new mysqli(BD_SERVIDOR, BD_USUARIO, BD_SENHA, BD_BANCO);
     if ($this->mysql->connect_error) {
-      //se verdadeiro retorna o erro gerado no mysql
       die("Falha de conexão: " . $this->mysql->connect_error);
     }
   }
   public function getInfo(){
-    //guarda o comando SQL na variavel $query
     $query = "SELECT * FROM informacoes";
-    //$result recebe o retorno do metodo query do objeto $mysql
-    //a variavel $query é passada como parametro no metodo query do objeto $mysql
     $result = $this->mysql->query($query);
-    //num_rows analisa a quantidade de linhas retornadas na consulta SQL
     if ($result->num_rows > 0) {
-      //Obtem a proxima linha do result $row recebe essa linha
-      //cada linha $row se comporta como array
       while ($row = $result->fetch_array()) {
-        //monta -se as linhas e colunas da tabela que sera exibida usando tags HTML
         echo 
         
         '<table>
@@ -141,15 +132,14 @@ class Dao{
         </div>';
       }
     } else {
-      //se não retornar nenhuma linha do consulta SQL exibe a mensagem abaixo.
       echo "<tr>Dados não encontrados</tr>";
     }
   }
 
-  public function insertInfo($nome_prod, $quantidade, $valor_unitario)
+  public function insertInfo($nome_cliente, $dominio, $data_inicio)
   {
-    $stmt = $this->mysql->prepare("INSERT INTO informacoes (nome_prod, quantidade, valor_unitario) VALUES (?,?,?)");
-    $stmt->bind_param("sss", $nome_prod, $quantidade, $valor_unitario);
+    $stmt = $this->mysql->prepare("INSERT INTO informacoes (nome_cliente, dominio, data_inicio) VALUES (?,?,?)");
+    $stmt->bind_param("sss", $nome_cliente, $dominio, $data_inicio);
     if ($stmt->execute() == TRUE) {
       header('Location: ../view/painel.php');
     } else {

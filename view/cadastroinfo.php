@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+$data = date('d/m/Y');
 
 ?>
 <!DOCTYPE html>
@@ -36,18 +37,19 @@ session_start();
 
             <div class="form-row">
               <div class="form-group col-md-4">
-                <input required type="text" class="form-control" id="nome_prod" name="nome_prod" placeholder="Nome do produto">
+                <input required type="text" class="form-control" id="nome_cliente" name="nome_cliente" placeholder="Nome do Cliente">
               </div>
 
               <!-- Quantidade -->
 
               <div class="form-group col-md-4">
-                <input required type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Quantidade em estoque">
+                <input required type="text" class="form-control" id="dominio" name="dominio" placeholder="Domínio">
               </div>
 
               <!-- Valo Unitário -->
 
-              <div class="fo rm-group col-md-4"> <input required type="text" class="form-control" id="valor_unitario" name="valor_unitario" placeholder="Valor unitário"> </div>
+              <div class="fo rm-group col-md-4">
+                <input required type="text" class="form-control" id="data_inicio" name="data_inicio" value="<?php echo $data ?>"> </div>
             </div>
 
             <!-- E n v i a r - e - L i m p a r -->
