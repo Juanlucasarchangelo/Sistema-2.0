@@ -1,35 +1,43 @@
 <?php
-
 require_once('../model/class.info.php');
+class ControllerInfo
+{
+    private $obj;
+    function __construct()
+    {
+        $this->obj = new Info();
+        $this->obj->conexao();
+    }
 
-class controlletInfo{
+    public function getTodosFunc()
+    {
+        $this->obj->conexao();
+        $this->obj->getInfo();
+    }
 
-    public function verificaLogin($usuario, $senha){
+    public function setInfo($nome_prod, $quantidade, $valor_unitario)
+    {
+        $this->obj->insertInfo($nome_prod, $quantidade, $valor_unitario);
+    }
+    public function updateInfo($id_camp, $nome_prod, $quantidade, $valor_unitario)
+    {
+        $this->obj->updateInfo($id_camp, $nome_prod, $quantidade, $valor_unitario);
+    }
+    public function deleteInfo($id_camp)
+    {
+        $this->obj->delete_Info($id_camp);
+    }
 
-        include('conexao.php');
+}
+$objControl = new ControllerInfo();
+if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] == "POST") {
+    if (isset($_POST['_incluir']) && $_POST['_incluir'] == "_incluir") {
+        $objControl->setInfo($_POST['nome_prod'], $_POST['quantidade'], $_POST['valor_unitario']);
 
-        if(empty($usuario) || empty($senha)){
-            header('location: ../index.php');
-            exit;
-        } else {
-            
-            $usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);
-            $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
-            
-            $query = "SELECT * FROM usuario WHERE email = '{$usuario}' AND senha = md5('{$senha}')";
-            
-            $result = mysqli_query($conexao, $query);
-            
-            $row = mysqli_num_rows($result);
-            
-            if($row == 1){
-                header('Location: ../view/painel.php');
-                exit();
-            } else {
-                header('Location: ../index.php');
-            }
-        }
+    } else if (isset($_POST['_update']) && $_POST['_update'] == "_update") {
+        $objControl->updateInfo($_POST['id_camp'], $_POST['nome_prod'], $_POST['quantidade'], $_POST['valor_unitario']);
     }
 }
-
-?>
+if (isset($_GET['id_camp'])) {
+    $objControl->deleteInfo($_GET['id_camp']);
+}

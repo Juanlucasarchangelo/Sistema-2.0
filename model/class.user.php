@@ -1,22 +1,41 @@
 <?php
 
-class Usuario {
+//password_hash - criptografa
+require_once('class.dao.php');
+Class User extends Dao{
+    
+    public function login($user, $senha){
 
-    private $id;
+        global $pdo;
+
+        $sql = "SELECT * FROM usuario WHERE email = :user AND senha = :senha";
+        $sql = $pdo->prepare($sql);
+        $sql->bindValue("user", $user);
+        $sql->bindValue("senha", md5($senha));
+        $sql->execute();
+
+        if ($sql->rowCount() > 0) {
+
+            $dado = $sql->fetch();
+
+            $_SESSION["id_user"] = $dado["id_user"];
+
+            return true;
+
+        } else {
+           
+            return false;
+
+        }
+        
+
+    }
+
     private $nome;
     private $email;
-    private $telefone;
-    private $celular;
-    private $dataNasc;
-    private $cpf;
-    private $foto;
+    private $senha;
 
-    public function setId($id){
-        $this->id = $id;
-    }
-    public function getId(){
-        return $this->id;
-    }
+
     public function setNome($nome){
         $this->nome = $nome;
     }
@@ -26,39 +45,14 @@ class Usuario {
     public function setEmail($email){
         $this->email = $email;
     }
-    public function getemail(){
+    public function getEmail(){
         return $this->email;
     }
-    public function setCelular($celular){
-        $this->celular = $celular;
+    public function setSenha($senha){
+        $this->senha = $senha;
     }
-    public function getCelular(){
-        return $this->celular;
-    }
-    public function setDataNasc($dataNasc){
-        $this->dataNasc = $dataNasc;
-    }
-    public function getDataNasc(){
-        return $this->dataNasc;
-    }
-    public function setCpf($cpf){
-        $this->cpf = $cpf;
-    }
-    public function getCpf(){
-        return $this->cpf;
-    }
-    public function setFoto($foto){
-        $this->foto = $foto;
-    }
-    public function getFoto(){
-        return $this->foto;
-    }
-    public function setTelefone($telefone){
-        $this->telefone = $telefone;
-    }
-    public function getTelefone(){
-        return $this->telefone;
+    public function getSenha(){
+        return $this->senha;
     }
 }
-
 ?>

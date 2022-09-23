@@ -1,18 +1,3 @@
-<?php
-
-require_once('controller/controllerInfo.php');
-
-$usuario = $_POST['usuario'];
-$senha = $_POST['senha'];
-
-
-$login = new controlletInfo();
-$login->verificaLogin($usuario, $senha);
-
-echo $usuario, $senha;
-
-?>
-
 <!DOCTYPE html>
 <html>
     
@@ -27,6 +12,16 @@ echo $usuario, $senha;
     <title>Login - Drop Here</title>
 </head>
 <body>
+<?php
+	if(isset($_SESSION['nao_autenticado'])):
+?>
+	<div class="notification">
+	<p>ERRO: Usuário ou senha inválidos.</p>
+	</div>
+<?php
+	endif;
+	unset($_SESSION['nao_autenticado']);
+?>
 	<div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
@@ -36,7 +31,7 @@ echo $usuario, $senha;
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form action="controller/controllerInfo.php" method="POST">
+					<form action="controller/login.php" method="POST">
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
