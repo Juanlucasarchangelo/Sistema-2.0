@@ -19,25 +19,20 @@ class Dao{
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_array()) {
         echo 
-
-
         '<!-- Informação da tela Painel.php -->
-
-        <table>
-        <tr>
-        <td width=40% class="text-left">
-        <p style="display: block"><a href="#modalExemplo" style="color: black" data-toggle="modal" data-target="#modalExemplo' . $row['id_camp'] . '">' . $row['nome_cliente'] . '</a></p>
+        <tr class="unread">
+        <td class="view-message">
+        <p><a href="#modalExemplo" style="color: black" data-toggle="modal" data-target="#modalExemplo' . $row['id_camp'] . '">' . $row['nome_cliente'] . '</a></p>
         </td>
 
-        <th class="text-left">
-        <p>' . $row['dominio'] . '</p>
-        </th>
+        <td class="view-message"><a href="https://'. $row['dominio'] .'" target="blank" style="color: black">
+        ' . $row['dominio'] . '
+        </td>
 
-        <td class="text-right">
+        <td class="view-message">
         <p><a href="#modalExemplodel" style="color: red" data-toggle="modal" data-target="#modalExemplodel' . $row['id_camp'] . '">Apagar</a></p>
         </td>
         </tr>        
-        </table>
         <!-- End Informação da tela Painel.php -->';
 
         echo ' <hr>     

@@ -56,7 +56,7 @@ if(!$_SESSION['usuario']){
             <a class="nav-link" href="cadastroinfo.php">Cadastro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="perfil.php">Perfil</a>
+            <a class="nav-link" href="novo_user.php">Perfil</a>
           </li>
 
           <!--Mudar Botão Login -->
@@ -87,7 +87,7 @@ if(!$_SESSION['usuario']){
 
       <div class="col-xl-9 col-lg-8 col-sm-12 card bg-light shadow-lg p-3 mb-5 rounded">
         <?php
-            require_once("../controller/controllerInfo.php");
+            require_once("../controller/controllerinfo.php");
             $objControllerFunc = new controllerInfo();
             $objControllerFunc->getTodosFunc();
         ?>
