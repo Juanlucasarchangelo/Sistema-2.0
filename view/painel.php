@@ -18,7 +18,7 @@ if(!$_SESSION['usuario']){
   <title>Sistema</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foΩΩ-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/Style.css">
   <link rel="shortcut icon" href="img/Logo site preto.png">
   <style>
     .foto_perfil{
@@ -53,7 +53,10 @@ if(!$_SESSION['usuario']){
             <a class="nav-link" href="painel.php">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cadastroinfo.php">Cadastro de produtos</a>
+            <a class="nav-link" href="cadastroinfo.php">Cadastro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="perfil.php">Perfil</a>
           </li>
 
           <!--Mudar Botão Login -->
