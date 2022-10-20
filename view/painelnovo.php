@@ -111,7 +111,7 @@ if (!$_SESSION['usuario']) {
 
     <!-- Footer-->
 
-    <footer class="row">
+    <footer class="row bg-light">
         <div class="col-md-12 text-center">
             <p class="mb-2">Juan archangelo © 2022 - Todos os direitos reservados</p>
         </div>
