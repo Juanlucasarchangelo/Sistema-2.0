@@ -52,6 +52,12 @@ if (!$_SESSION['usuario']) {
                     <li>
                         <a href="cadastroinfo.php"> Cadastro</a>
                     </li>
+                    <li>
+                        <a href="cadastroinfo.php"> Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-danger text-light" href="../controller/logout.php">Logout</a>
+                    </li>
                 </ul>
                 <div class="inbox-body text-center">
                     <div class="btn-group">
