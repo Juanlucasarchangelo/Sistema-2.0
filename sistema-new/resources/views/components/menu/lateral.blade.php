@@ -328,7 +328,7 @@
                             <div class="sl-item b-primary">
                                 <div class="sl-content">
                                     <div class="text-muted">2 days ago</div>
-                                    <p>Call to customer <a href="" class="text-info">Jacob</a> and discuss the
+                                    <p>Call to <a href="" class="text-info">Jacob</a> and discuss the
                                         detail.</p>
                                 </div>
                             </div>
