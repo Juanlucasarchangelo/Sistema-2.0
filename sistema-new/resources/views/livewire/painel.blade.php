@@ -3,10 +3,11 @@
         <div class="card text-center">
             <div class="body">
                 <p class="m-b-20"><i class="zmdi zmdi-balance zmdi-hc-3x col-amber"></i></p>
-                <span>Total Revenue</span>
-                <h3 class="m-b-10">$<span class="number count-to" data-from="0" data-to="2078"
-                        data-speed="2000" data-fresh-interval="700">2078</span></h3>
-                <small class="text-muted">27% lower growth</small>
+                <span>Clientes Ativos</span>
+                <h3 class="m-b-10"><span class="number count-to" data-from="0" data-to="{{ $cliente }}"
+                        data-speed="2000" data-fresh-interval="700">{{ $cliente }}</span></h3>
+                <!-- Habilite caso queira mostrar um percentual com base no mes passado-->
+                {{-- <small class="text-muted">27% lower growth</small> --}}
             </div>
         </div>
     </div>
@@ -14,10 +15,10 @@
         <div class="card text-center">
             <div class="body">
                 <p class="m-b-20"><i class="zmdi zmdi-assignment zmdi-hc-3x col-blue"></i></p>
-                <span>Total Orders</span>
-                <h3 class="m-b-10 number count-to" data-from="0" data-to="865" data-speed="2000"
-                    data-fresh-interval="700">865</h3>
-                <small class="text-muted">88% lower growth</small>
+                <span>Sites Ativos</span>
+                <h3 class="m-b-10 number count-to" data-from="0" data-to="{{ $site }}" data-speed="2000"
+                    data-fresh-interval="700">{{ $site }}</h3>
+                {{-- <small class="text-muted">88% lower growth</small> --}}
             </div>
         </div>
     </div>
@@ -25,10 +26,10 @@
         <div class="card text-center">
             <div class="body">
                 <p class="m-b-20"><i class="zmdi zmdi-shopping-basket zmdi-hc-3x"></i></p>
-                <span>Total Sales</span>
-                <h3 class="m-b-10 number count-to" data-from="0" data-to="3502" data-speed="2000"
-                    data-fresh-interval="700">3502</h3>
-                <small class="text-muted">38% lower growth</small>
+                <span>Briefings Ativos</span>
+                <h3 class="m-b-10 number count-to" data-from="0" data-to="{{ $resumo }}" data-speed="2000"
+                    data-fresh-interval="700">{{ $resumo }}</h3>
+                {{-- <small class="text-muted">38% lower growth</small> --}}
             </div>
         </div>
     </div>
@@ -50,8 +51,8 @@
             <div class="header">
                 <h2><strong>Visit</strong> & Sales Statistics</h2>
                 <ul class="header-dropdown">
-                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle"
-                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="zmdi zmdi-more"></i> </a>
                         <ul class="dropdown-menu slideUp">
                             <li><a href="javascript:void(0);">Action</a></li>
@@ -143,8 +144,8 @@
             <div class="header">
                 <h2><strong>Campaign</strong> Performance</h2>
                 <ul class="header-dropdown">
-                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle"
-                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="zmdi zmdi-more"></i> </a>
                         <ul class="dropdown-menu slideUp">
                             <li><a href="javascript:void(0);">Action</a></li>
@@ -312,16 +313,16 @@
                     data-fresh-interval="700">251</h5>
                 <p class="text-muted">Referrals <span class="float-right">18%</span></p>
                 <div class="progress m-b-20">
-                    <div class="progress-bar l-amber" role="progressbar" aria-valuenow="18"
-                        aria-valuemin="0" aria-valuemax="100" style="width: 18%;"></div>
+                    <div class="progress-bar l-amber" role="progressbar" aria-valuenow="18" aria-valuemin="0"
+                        aria-valuemax="100" style="width: 18%;"></div>
                 </div>
 
                 <h5 class="m-b-0 number count-to" data-from="0" data-to="941" data-speed="2000"
                     data-fresh-interval="700">941</h5>
                 <p class="text-muted">Search Engines <span class="float-right">67%</span></p>
                 <div class="progress">
-                    <div class="progress-bar l-green" role="progressbar" aria-valuenow="67"
-                        aria-valuemin="0" aria-valuemax="100" style="width: 67%;"></div>
+                    <div class="progress-bar l-green" role="progressbar" aria-valuenow="67" aria-valuemin="0"
+                        aria-valuemax="100" style="width: 67%;"></div>
                 </div>
             </div>
             <div class="body">
@@ -572,11 +573,11 @@
             <div class="body l-coral overflowhidden">
                 <p class="m-b-0">Outbound Bandwidth</p>
                 <h3>340</h3>
-                <div class="sparkline" data-type="line" data-spot-Radius="4"
-                    data-highlight-Spot-Color="#fff" data-highlight-Line-Color="#222"
-                    data-min-Spot-Color="#fff" data-max-Spot-Color="#fff" data-spot-Color="#fff"
-                    data-offset="90" data-width="100%" data-height="135px" data-line-Width="2"
-                    data-line-Color="#fff" data-fill-Color="transparent">2,3,5,6,4,5,1,2,3,2,5</div>
+                <div class="sparkline" data-type="line" data-spot-Radius="4" data-highlight-Spot-Color="#fff"
+                    data-highlight-Line-Color="#222" data-min-Spot-Color="#fff" data-max-Spot-Color="#fff"
+                    data-spot-Color="#fff" data-offset="90" data-width="100%" data-height="135px"
+                    data-line-Width="2" data-line-Color="#fff" data-fill-Color="transparent">2,3,5,6,4,5,1,2,3,2,5
+                </div>
             </div>
         </div>
     </div>
@@ -601,8 +602,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <address>
-                            <strong>ThemeMakker Inc.</strong> <small
-                                class="float-right">13/04/2018</small><br>
+                            <strong>ThemeMakker Inc.</strong> <small class="float-right">13/04/2018</small><br>
                             795 Folsom Ave, Suite 546<br>
                             San Francisco, CA 54656<br>
                             <abbr title="Phone">P:</abbr> (123) 456-34636
