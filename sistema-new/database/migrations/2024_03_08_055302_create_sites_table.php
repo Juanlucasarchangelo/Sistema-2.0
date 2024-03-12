@@ -15,8 +15,10 @@ class CreateSitesTable extends Migration
     {
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_cliente');
+            $table->string('status');
+            $table->string('email_pessoal');
             $table->string('data_inicio_site');
+            $table->string('data_inicio_cliente');
             $table->string('dominio');
             $table->string('email_profissional');
             $table->string('endereco_loja_virtual');
@@ -31,7 +33,10 @@ class CreateSitesTable extends Migration
             $table->string('dns_secundario');
             $table->string('usuario_ftp');
             $table->string('host_ftp');
-            $table->string('senha_ftp');
+            $table->string('vencimento_domínio');
+            $table->string('provedor_dominio');
+            $table->string('informacoes_acesso_dominio');
+            $table->string('data_cancelamento');
             $table->string('informacoes_login_site');
             $table->timestamps();
         });
