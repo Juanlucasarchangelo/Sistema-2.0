@@ -1,3 +1,3 @@
-<footer class="page-footer">
-    <p class="mb-0">Copyright © 2021. All right reserved.</p>
+<footer class="page-footer text-center pb-4">
+    <p class="mb-0">ACE © <?= date('Y')?> | Todos os direitos reservados.</p>
 </footer>

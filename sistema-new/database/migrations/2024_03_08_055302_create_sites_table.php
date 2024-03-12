@@ -16,6 +16,7 @@ class CreateSitesTable extends Migration
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
             $table->string('status');
+            $table->string('data_cancelamento');
             $table->string('email_pessoal');
             $table->string('data_inicio_site');
             $table->string('data_inicio_cliente');
@@ -36,8 +37,8 @@ class CreateSitesTable extends Migration
             $table->string('vencimento_domínio');
             $table->string('provedor_dominio');
             $table->string('informacoes_acesso_dominio');
-            $table->string('data_cancelamento');
             $table->string('informacoes_login_site');
+            $table->string('informacoes_banco_dados');
             $table->timestamps();
         });
     }

@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/painel', App\Http\Livewire\Painel::class);
+Route::get('/painel', App\Http\Livewire\Painel::class)->name('painel.dashboard');
