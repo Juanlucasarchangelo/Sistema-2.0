@@ -18,3 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/painel', App\Http\Livewire\Painel::class)->name('painel.dashboard');
+
+Route::get('/site/listar', App\Http\Livewire\Site\ListarSites::class)->name('site.listar');
+Route::get('/site/criar', App\Http\Livewire\Site\AdicionarSites::class)->name('site.criar');

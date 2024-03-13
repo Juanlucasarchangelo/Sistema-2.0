@@ -2,7 +2,7 @@
     <ul class="menu_list">
         <li>
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" alt="Alpino"></a>
+            <a class="navbar-brand" href={{ route('painel.dashboard') }}><img src={{ asset('assets/images/logo.svg') }} alt="Alpino"></a>
         </li>
         <li><a href="javascript:void(0);" class="btn_overlay hidden-sm-down"><i class="zmdi zmdi-search"></i></a>
         </li>
@@ -383,7 +383,7 @@
                 <li>
                     <div class="user-info m-b-20">
                         <div class="image">
-                            <a href="profile.html"><img src="assets/images/profile_av.jpg" alt="User"></a>
+                            <a href="profile.html"><img src={{ asset('assets/images/profile_av.jpg') }} alt="User"></a>
                         </div>
                         <div class="detail">
                             <h6>Michael</h6>
@@ -406,7 +406,8 @@
                         {{-- <span class="badge badge-success float-right">7</span> --}}
                     </a>
                     <ul class="ml-menu">
-                        <li><a href="mail-inbox.html">Criar / Editar</a></li>
+                        <li><a href="mail-inbox.html">Criar</a></li>
+                        <li><a href="mail-inbox.html">Listar</a></li>
                         <li><a href="chat.html">Briefings</a></li>
                     </ul>
                 </li>
@@ -415,7 +416,8 @@
                     {{-- <span class="badge badge-default float-right">15</span> --}}
                     </a>
                     <ul class="ml-menu">
-                        <li><a href="ui_kit.html">Criar / Editar</a></li>
+                        <li><a href={{ route('site.criar') }}>Criar</a></li>
+                        <li><a href={{ route('site.listar') }}>Listar</a></li>
                     </ul>
                 </li>
             </ul>
