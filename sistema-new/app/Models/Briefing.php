@@ -9,10 +9,5 @@ class Briefing extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'descricao',
-        'data_criacao',
-        'id_user_responsavel',
-        'status'
-    ];
+    protected $guarded = [];
 }

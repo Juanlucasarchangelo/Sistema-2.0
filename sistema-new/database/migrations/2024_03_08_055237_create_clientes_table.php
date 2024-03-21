@@ -22,7 +22,7 @@ class CreateClientesTable extends Migration
             $table->string('id_site');
             $table->string('telefone_celular');
             $table->string('telefone_fixo');
-            $table->string('data_inicio');
+            $table->string('data_inicio_cliente');
             $table->longText('briefing');
             $table->longText('anotacoes');
             $table->timestamps();

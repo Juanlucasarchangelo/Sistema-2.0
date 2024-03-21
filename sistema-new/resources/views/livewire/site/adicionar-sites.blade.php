@@ -22,12 +22,14 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 m-b-20">
                             <b>Domínio</b>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="exemplo.com.br" />
+                                <input type="text" class="form-control" wire:model.defer="dominio"
+                                    placeholder="exemplo.com.br" />
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 m-b-20">
                             <b>Cliente</b>
-                            <select class="form-control z-index show-tick" data-live-search="true">
+                            <select class="form-control z-index show-tick" wire:model.defer="id_cliente"
+                                data-live-search="true">
                                 <option selected>Selecione um cliente</option>
                                 <option value="1">1</option>
                             </select>
@@ -35,17 +37,18 @@
                     </div>
                     <div class="demo-masked-input">
                         <div class="row clearfix">
-                            <div class="col-lg-6 col-md-6 col-sm-12"> <b>E-mail Tecnico</b>
+                            <div class="col-lg-6 col-md-6 col-sm-12"> <b>E-mail Pessoal</b>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
-                                    <input type="text" class="form-control email" placeholder="exemplo@exemplo.com">
+                                    <input type="text" class="form-control email" wire:model.defer="email"
+                                        placeholder="exemplo@exemplo.com">
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
                                 <b>Data Site no Ar</b>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i> </span>
-                                    <input type="text" class="form-control date" value="<?= date('d/m/Y') ?>">
+                                    <input type="date" class="form-control date" wire:model.defer="data">
                                 </div>
                             </div>
                         </div>
@@ -55,6 +58,13 @@
                         <button type="submit" class="btn btn-warning rounded-pill">Salvar</button>
                     </div>
                 </form>
+                <div wire:loading>
+                    <div class="row d-flex">
+                        <div class="bg bg-success text-center col-12 rounded-4">
+                            Loading...
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

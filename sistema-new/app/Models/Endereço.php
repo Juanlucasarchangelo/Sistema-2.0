@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Endereço extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }
