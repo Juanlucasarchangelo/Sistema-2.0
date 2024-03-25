@@ -1,73 +1,62 @@
-{{-- <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> --}}
-
-<!doctype html>
-<html class="no-js " lang="en">
+<!DOCTYPE html>
+<html lang="pt">
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('/assets/images/Logo site Original.png') }}" type="image/x-icon">
 
-    <!--favicon-->
-    <link rel="icon" href="{{ asset('/assets/images/fav icon ta telecom.png') }}" type="image/x-icon" />
-    <!--plugins-->
-    <link href="{{ asset('/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/assets/plugins/bower_components/select2/dist/css/select2.css') }}" rel="stylesheet" />
+    <!-- Plugins -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/morrisjs/morris.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/metismenu/css/metisMenu.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}">
 
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href={{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}>
-    <link rel="stylesheet" href={{ asset('assets/plugins/morrisjs/morris.css') }} />
-    <link rel="stylesheet" href={{ asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }} />
-
-    <!-- Custom Css -->
-    <link rel="stylesheet" href={{ asset('assets/css/main.css') }}>
-    <link rel="stylesheet" href={{ asset('assets/css/color_skins.css') }}>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/color_skins.css') }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
+    <!-- Livewire Styles -->
     @livewireStyles
 </head>
 
 <body>
     @if (isset($slot))
-        <!--wrapper-->
-        <section class="content home">
-            <div class="container-fluid">
-                <!--sidebar wrapper -->
-                <x-menu.lateral />
-                <x-menu.superior />
-                <div class="page-wrapper">
-                    {{ $slot }}
-                </div>
-                <x-rodape />
+    <!-- Wrapper -->
+    <section class="content home">
+        <div class="container-fluid">
+            <!-- Sidebar Wrapper -->
+            <x-menu.lateral />
+            <x-menu.superior />
+            <div class="page-wrapper">
+                {{ $slot }}
             </div>
-        </section>
+            <x-rodape />
+        </div>
+    </section>
     @else
-        @yield('content')
+    @yield('content')
     @endif
 
+    <!-- Livewire Scripts -->
     @livewireScripts
 
-    <!-- Jquery Core Js -->
-    <script src={{ asset('assets/bundles/libscripts.bundle.js') }}></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) -->
-    <script src={{ asset('assets/bundles/vendorscripts.bundle.js') }}></script> <!-- slimscroll, waves Scripts Plugin Js -->
+    <!-- Core Scripts -->
+    <script src="{{ asset('assets/bundles/libscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/bundles/vendorscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/bundles/knob.bundle.js') }}"></script>
+    <script src="{{ asset('assets/bundles/sparkline.bundle.js') }}"></script>
+    <script src="{{ asset('assets/plugins/chartjs/Chart.bundle.js') }}"></script>
+    <script src="{{ asset('assets/plugins/chartjs/polar_area_chart.js') }}"></script>
+    <script src="{{ asset('assets/bundles/mainscripts.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/index.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/charts/polar_area_chart.js') }}"></script>
 
-    <script src={{ asset('assets/bundles/knob.bundle.js') }}></script> <!-- Jquery Knob-->
-    <script src={{ asset('assets/bundles/jvectormap.bundle.js') }}></script> <!-- JVectorMap Plugin Js -->
-    <script src={{ asset('assets/bundles/morrisscripts.bundle.js') }}></script> <!-- Morris Plugin Js -->
-    <script src={{ asset('assets/bundles/sparkline.bundle.js') }}></script> <!-- sparkline Plugin Js -->
-    <script src={{ asset('assets/bundles/doughnut.bundle.js') }}></script>
-
-    <script src={{ asset('assets/bundles/mainscripts.bundle.js') }}></script>
-    <script src={{ asset('assets/js/pages/index.js') }}></script>
+    <!-- Additional Scripts -->
     @stack('js')
 </body>
 
