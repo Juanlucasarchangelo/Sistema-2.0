@@ -22,8 +22,13 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 m-b-20">
                             <b>Domínio</b>
                             <div class="form-group">
-                                <input type="text" class="form-control" wire:model.defer="dominio" placeholder="exemplo.com.br" />
-                                <div>@error('dominio') {{ $message }} @enderror</div>
+                                <input type="text" class="form-control" wire:model.defer="dominio"
+                                    placeholder="exemplo.com.br" />
+                                <div>
+                                    @error('dominio')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 m-b-20">
@@ -33,7 +38,11 @@
                                 <option selected>Selecione um cliente</option>
                                 <option value="1">1</option>
                             </select>
-                            <div>@error('id_cliente') {{ $message }} @enderror</div>
+                            <div>
+                                @error('id_cliente')
+                                    <span class="error">{{ $message }}</span>
+                                @enderror
+                            </div>
                         </div>
                     </div>
                     <div class="demo-masked-input">
@@ -41,8 +50,13 @@
                             <div class="col-lg-6 col-md-6 col-sm-12"> <b>E-mail Pessoal</b>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
-                                    <input type="text" class="form-control email" wire:model.defer="email_pessoal" placeholder="exemplo@exemplo.com">
-                                    <div>@error('email_pessoal') {{ $message }} @enderror</div>
+                                    <input type="text" class="form-control email" wire:model.defer="email_pessoal"
+                                        placeholder="exemplo@exemplo.com">
+                                    <div>
+                                        @error('email_pessoal')
+                                            <span class="error">{{ $message }}</span>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -50,6 +64,11 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="zmdi zmdi-calendar"></i> </span>
                                     <input type="date" class="form-control date" wire:model.defer="data_inicio_site">
+                                </div>
+                                <div>
+                                    @error('data_inicio_site')
+                                        <span class="error">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>

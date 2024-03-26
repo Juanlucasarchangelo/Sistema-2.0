@@ -15,7 +15,6 @@ class AdicionarSites extends Component
     public function mount()
     {
         $this->data_inicio_site = date('Y-m-d');
-        $this->reset(['dominio', 'id_cliente', 'data_inicio_site', 'email_pessoal']);
     }
 
     public function salvar()
@@ -35,6 +34,8 @@ class AdicionarSites extends Component
         ], $mensagens);
 
         Site::create($validated);
+
+        $this->reset();
     }
 
 

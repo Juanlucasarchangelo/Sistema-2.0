@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('/assets/images/Logo site Original.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/images/logo/Logo site Original.png') }}" type="image/x-icon">
 
     <!-- Plugins -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/plugins/morrisjs/morris.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/plugins/metismenu/css/metisMenu.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/plugins/morrisjs/morris.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.css') }}">
 
     <!-- Custom CSS -->
@@ -50,13 +49,9 @@
     <script src="{{ asset('assets/bundles/vendorscripts.bundle.js') }}"></script>
     <script src="{{ asset('assets/bundles/knob.bundle.js') }}"></script>
     <script src="{{ asset('assets/bundles/sparkline.bundle.js') }}"></script>
-    <script src="{{ asset('assets/plugins/chartjs/Chart.bundle.js') }}"></script>
-    <script src="{{ asset('assets/plugins/chartjs/polar_area_chart.js') }}"></script>
     <script src="{{ asset('assets/bundles/mainscripts.bundle.js') }}"></script>
     <script src="{{ asset('assets/js/pages/index.js') }}"></script>
-    <script src="{{ asset('assets/js/pages/charts/polar_area_chart.js') }}"></script>
 
-    <!-- Additional Scripts -->
     @stack('js')
 </body>
 
